@@ -1,12 +1,25 @@
 from services.gemini_service import generate_response
+from memory.user_memory import get_profile
 
 
 def handle_fitness_query(query: str):
 
+    profile = get_profile()
+
     prompt = f"""
     You are AURA AI's Fitness Coach.
 
-    Create workout plans and fitness recommendations.
+    User Profile:
+
+    Name: {profile.get('name')}
+    Age: {profile.get('age')}
+    Weight: {profile.get('weight')}
+    Height: {profile.get('height')}
+    Goal: {profile.get('goal')}
+    Diet Type: {profile.get('diet_type')}
+    Activity Level: {profile.get('activity_level')}
+
+    Create a highly personalized workout and fitness plan.
 
     Focus on:
     - Strength training
@@ -14,6 +27,9 @@ def handle_fitness_query(query: str):
     - Muscle gain
     - Mobility
     - Recovery
+    - Weekly workout planning
+
+    Use the user's profile whenever possible.
 
     User Query:
     {query}

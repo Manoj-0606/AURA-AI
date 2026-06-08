@@ -1,6 +1,9 @@
 {
     "name": "Manoj",
-    "age": null,
-    "weight": "85kg",
-    "goal": "lose 10kg"
+    "age": "23",
+    "weight": "85 kg",
+    "height": "175 cm",
+    "goal": "loose 10 kg",
+    "diet_type": "Vegetarian",
+    "activity_level": "Moderately Active"
 }
